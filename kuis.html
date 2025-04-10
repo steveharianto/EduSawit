@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis - EduSawit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4CAF50',
+            secondary: '#FFEB3B',
+            tertiary: '#795548'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-poppins min-h-screen bg-green-50 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2 group">
+        <img src="images/logo.png" alt="Logo EduSawit" class="h-10 w-auto">
+        <h1 class="text-primary text-xl md:text-2xl font-bold group-hover:text-tertiary transition">EduSawit</h1>
+      </a>
+      <a href="index.html" class="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Kembali
+      </a>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center mb-2">
+      <h2 class="text-xl md:text-2xl font-bold text-tertiary">Kuis Kelapa Sawit</h2>
+      <span id="question-counter" class="text-sm font-medium text-tertiary bg-secondary/30 py-1 px-3 rounded-full">Soal 1 dari 5</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+      <div id="progress-bar" class="bg-primary h-2.5 rounded-full" style="width: 20%"></div>
+    </div>
+  </div>
+
+  <!-- Quiz Container -->
+  <div class="container mx-auto px-4 py-6 flex-grow">
+    <div class="bg-white rounded-xl shadow-md p-6 md:p-8 max-w-3xl mx-auto">
+      <form id="quiz-form">
+        <!-- Question 1 -->
+        <div id="question-1" class="question-container">
+          <div class="mb-6">
+            <h3 class="text-lg md:text-xl font-semibold text-tertiary mb-3">Kapan kelapa sawit pertama kali dibawa ke Indonesia?</h3>
+            <div class="space-y-3">
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q1" value="A" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Tahun 1800</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q1" value="B" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Tahun 1848</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q1" value="C" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Tahun 1900</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q1" value="D" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Tahun 1945</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question-2" class="question-container hidden">
+          <div class="mb-6">
+            <h3 class="text-lg md:text-xl font-semibold text-tertiary mb-3">Manakah yang BUKAN merupakan produk turunan dari kelapa sawit?</h3>
+            <div class="space-y-3">
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q2" value="A" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Minyak goreng</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q2" value="B" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Sabun mandi</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q2" value="C" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Margarin</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q2" value="D" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Beras</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question-3" class="question-container hidden">
+          <div class="mb-6">
+            <h3 class="text-lg md:text-xl font-semibold text-tertiary mb-3">Berapa lama pohon kelapa sawit dapat bertahan hidup?</h3>
+            <div class="space-y-3">
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q3" value="A" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">5-10 tahun</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q3" value="B" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">15-20 tahun</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q3" value="C" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">25-30 tahun</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q3" value="D" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">50-100 tahun</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question-4" class="question-container hidden">
+          <div class="mb-6">
+            <h3 class="text-lg md:text-xl font-semibold text-tertiary mb-3">Apa nama alat yang digunakan untuk memanen buah sawit pada pohon tinggi?</h3>
+            <div class="space-y-3">
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q4" value="A" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Dodos</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q4" value="B" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Egrek</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q4" value="C" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Thresher</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q4" value="D" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">Kapak</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div id="question-5" class="question-container hidden">
+          <div class="mb-6">
+            <h3 class="text-lg md:text-xl font-semibold text-tertiary mb-3">Indonesia merupakan produsen kelapa sawit terbesar di dunia sejak tahun?</h3>
+            <div class="space-y-3">
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q5" value="A" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">1980-an</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q5" value="B" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">1990-an</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q5" value="C" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">2000-an</span>
+              </label>
+              <label class="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-green-50 cursor-pointer transition-all">
+                <input type="radio" name="q5" value="D" class="form-radio h-5 w-5 text-primary focus:ring-primary mr-3">
+                <span class="text-gray-700">2010-an</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8">
+          <button type="button" id="prev-btn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition focus:outline-none focus:ring-2 focus:ring-gray-400 flex items-center disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            Sebelumnya
+          </button>
+          
+          <button type="button" id="next-btn" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition focus:outline-none focus:ring-2 focus:ring-primary/50 flex items-center">
+            Selanjutnya
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          
+          <button type="submit" id="submit-btn" class="px-4 py-2 bg-secondary text-tertiary font-medium rounded-lg hover:bg-secondary/80 transition focus:outline-none focus:ring-2 focus:ring-secondary/50 hidden">
+            Selesai
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 mt-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">© 2025 EduSawit - Edukasi Kelapa Sawit untuk Pelajar</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="tentang.html" class="text-white hover:text-secondary transition">Tentang</a>
+          <a href="#" class="text-white hover:text-secondary transition">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Quiz functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const quizForm = document.getElementById('quiz-form');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const submitBtn = document.getElementById('submit-btn');
+      const questionCounter = document.getElementById('question-counter');
+      const progressBar = document.getElementById('progress-bar');
+      
+      let currentQuestion = 1;
+      const totalQuestions = 5;
+      
+      // Answers key (correct answers)
+      const correctAnswers = {
+        q1: 'B', // 1848
+        q2: 'D', // Beras
+        q3: 'C', // 25-30 tahun
+        q4: 'B', // Egrek
+        q5: 'C'  // 2000-an
+      };
+      
+      // Store user's answers
+      let userAnswers = {};
+      
+      // Show question by number
+      function showQuestion(questionNumber) {
+        // Hide all questions
+        document.querySelectorAll('.question-container').forEach(q => {
+          q.classList.add('hidden');
+        });
+        
+        // Show current question
+        document.getElementById(`question-${questionNumber}`).classList.remove('hidden');
+        
+        // Update counter
+        questionCounter.textContent = `Soal ${questionNumber} dari ${totalQuestions}`;
+        
+        // Update progress bar
+        progressBar.style.width = `${((questionNumber / totalQuestions) * 100)-20}%`;
+        
+        // Update buttons
+        prevBtn.disabled = questionNumber === 1;
+        
+        if (questionNumber === totalQuestions) {
+          nextBtn.classList.add('hidden');
+          submitBtn.classList.remove('hidden');
+        } else {
+          nextBtn.classList.remove('hidden');
+          submitBtn.classList.add('hidden');
+        }
+      }
+      
+      // Navigate to previous question
+      prevBtn.addEventListener('click', function() {
+        if (currentQuestion > 1) {
+          // Store the current answer first
+          const radioButtons = document.querySelectorAll(`input[name="q${currentQuestion}"]:checked`);
+          if (radioButtons.length > 0) {
+            userAnswers[`q${currentQuestion}`] = radioButtons[0].value;
+          }
+          
+          currentQuestion--;
+          showQuestion(currentQuestion);
+        }
+      });
+      
+      // Navigate to next question
+      nextBtn.addEventListener('click', function() {
+        if (currentQuestion < totalQuestions) {
+          // Store the current answer
+          const radioButtons = document.querySelectorAll(`input[name="q${currentQuestion}"]:checked`);
+          if (radioButtons.length > 0) {
+            userAnswers[`q${currentQuestion}`] = radioButtons[0].value;
+          }
+          
+          currentQuestion++;
+          showQuestion(currentQuestion);
+          
+          // If there's a saved answer for this question, select it
+          if (userAnswers[`q${currentQuestion}`]) {
+            const savedRadio = document.querySelector(`input[name="q${currentQuestion}"][value="${userAnswers[`q${currentQuestion}`]}"]`);
+            if (savedRadio) savedRadio.checked = true;
+          }
+        }
+      });
+      
+      // Handle form submission
+      quizForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Store the last answer
+        const radioButtons = document.querySelectorAll(`input[name="q${currentQuestion}"]:checked`);
+        if (radioButtons.length > 0) {
+          userAnswers[`q${currentQuestion}`] = radioButtons[0].value;
+        }
+        
+        // Calculate score
+        let score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+          if (userAnswers[`q${i}`] === correctAnswers[`q${i}`]) {
+            score++;
+          }
+        }
+        
+        // Store score and answers in localStorage
+        localStorage.setItem('quizScore', score);
+        localStorage.setItem('totalQuestions', totalQuestions);
+        localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+        localStorage.setItem('correctAnswers', JSON.stringify(correctAnswers));
+        
+        // Redirect to results page
+        window.location.href = 'hasil.html';
+      });
+      
+      // Add hover effect to radio button containers
+      const labelContainers = document.querySelectorAll('label.flex');
+      labelContainers.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        
+        radio.addEventListener('change', function() {
+          // Remove selected class from all labels in this question group
+          const questionGroup = this.name;
+          document.querySelectorAll(`input[name="${questionGroup}"]`).forEach(r => {
+            r.closest('label').classList.remove('bg-green-100', 'border-primary');
+          });
+          
+          // Add selected class to this label
+          if (this.checked) {
+            label.classList.add('bg-green-100', 'border-primary');
+          }
+        });
+      });
+      
+      // Initialize first question
+      showQuestion(currentQuestion);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSawit - Edukasi Kelapa Sawit untuk Pelajar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4CAF50',
+            secondary: '#FFEB3B',
+            tertiary: '#795548'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-poppins min-h-screen bg-green-50">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="images/logo.png" alt="Logo EduSawit" class="h-10 w-auto">
+        <h1 class="text-primary text-xl md:text-2xl font-bold">EduSawit</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-primary/10 to-primary/5 py-8 md:py-16">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-2xl md:text-4xl font-bold text-tertiary mb-4">Belajar Kelapa Sawit Jadi Menyenangkan!</h2>
+        <p class="text-gray-700 mb-6">Mari mengenal lebih dekat dengan komoditas penting Indonesia melalui media interaktif yang edukatif dan seru!</p>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="https://source.unsplash.com/random/600x400/?palm,oil,children,education" alt="Anak-anak belajar dengan latar sawit" class="rounded-lg shadow-lg max-w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Buttons -->
+  <section class="py-10 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="materi.html" class="bg-white hover:bg-primary hover:text-white text-primary rounded-xl shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">Materi</h3>
+          <p class="text-sm">Pelajari tentang sejarah, manfaat, dan proses produksi kelapa sawit</p>
+        </a>
+        
+        <a href="kuis.html" class="bg-white hover:bg-secondary hover:text-tertiary text-tertiary rounded-xl shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">Kuis</h3>
+          <p class="text-sm">Uji pengetahuanmu tentang kelapa sawit dengan kuis interaktif</p>
+        </a>
+        
+        <a href="fakta.html" class="bg-white hover:bg-tertiary hover:text-white text-tertiary rounded-xl shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">Fakta Menarik</h3>
+          <p class="text-sm">Temukan fakta menarik dan unik tentang kelapa sawit</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 mt-auto">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">© 2025 EduSawit - Edukasi Kelapa Sawit untuk Pelajar</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="tentang.html" class="text-white hover:text-secondary transition">Tentang</a>
+          <a href="#" class="text-white hover:text-secondary transition">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

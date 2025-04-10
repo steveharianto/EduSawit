@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Kuis - EduSawit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4CAF50',
+            secondary: '#FFEB3B',
+            tertiary: '#795548'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-poppins min-h-screen bg-green-50 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2 group">
+        <img src="images/logo.png" alt="Logo EduSawit" class="h-10 w-auto">
+        <h1 class="text-primary text-xl md:text-2xl font-bold group-hover:text-tertiary transition">EduSawit</h1>
+      </a>
+      <a href="index.html" class="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Beranda
+      </a>
+    </div>
+  </header>
+
+  <!-- Result Container -->
+  <div class="container mx-auto px-4 py-8 flex-grow">
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <!-- Score Header -->
+        <div id="score-header" class="bg-primary p-6 text-center">
+          <h2 class="text-white text-xl md:text-2xl font-bold mb-2">Hasil Kuis</h2>
+          <div class="flex justify-center">
+            <div id="score-circle" class="w-32 h-32 rounded-full bg-white flex items-center justify-center">
+              <div>
+                <span id="score-display" class="text-4xl font-bold text-primary">0/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feedback Message -->
+        <div class="p-6">
+          <div id="feedback-container" class="mb-6 text-center">
+            <div id="emoji-container" class="text-6xl mb-4">😊</div>
+            <h3 id="feedback-message" class="text-lg md:text-xl font-semibold text-tertiary mb-2">Selamat!</h3>
+            <p id="feedback-detail" class="text-gray-700">Kamu telah menyelesaikan kuis dengan baik.</p>
+          </div>
+          
+          <!-- Answer Review -->
+          <div id="answers-review" class="mt-8 border-t pt-6">
+            <h3 class="text-lg font-semibold text-tertiary mb-4">Jawaban Kamu:</h3>
+            <div id="review-container" class="space-y-4">
+              <!-- Questions and answers will be populated by JavaScript -->
+            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+            <a href="kuis.html" class="px-6 py-3 bg-secondary text-tertiary font-medium rounded-lg hover:bg-secondary/80 transition focus:outline-none focus:ring-2 focus:ring-secondary/50 text-center flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              Coba Lagi
+            </a>
+            <a href="materi.html" class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/80 transition focus:outline-none focus:ring-2 focus:ring-primary/50 text-center flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.38A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+              </svg>
+              Kembali ke Materi
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 mt-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">© 2025 EduSawit - Edukasi Kelapa Sawit untuk Pelajar</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="tentang.html" class="text-white hover:text-secondary transition">Tentang</a>
+          <a href="#" class="text-white hover:text-secondary transition">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get quiz results from localStorage
+      const score = parseInt(localStorage.getItem('quizScore') || 0);
+      const totalQuestions = parseInt(localStorage.getItem('totalQuestions') || 5);
+      const userAnswers = JSON.parse(localStorage.getItem('userAnswers') || '{}');
+      const correctAnswers = JSON.parse(localStorage.getItem('correctAnswers') || '{}');
+      
+      // Update score display
+      const scoreDisplay = document.getElementById('score-display');
+      scoreDisplay.textContent = `${score}/${totalQuestions}`;
+      // Determine feedback based on score
+      const feedbackMessage = document.getElementById('feedback-message');
+      const feedbackDetail = document.getElementById('feedback-detail');
+      const emojiContainer = document.getElementById('emoji-container');
+      const scoreHeader = document.getElementById('score-header');
+      const scoreCircle = document.getElementById('score-circle');
+      
+      // Set feedback based on score percentage
+      const percentage = (score / totalQuestions) * 100;
+      
+      if (percentage >= 80) {
+        feedbackMessage.textContent = 'Hebat!';
+        feedbackDetail.textContent = 'Kamu memiliki pemahaman yang sangat baik tentang kelapa sawit!';
+        emojiContainer.textContent = '🎉';
+        scoreHeader.classList.remove('bg-primary');
+        scoreHeader.classList.add('bg-green-600');
+        scoreCircle.classList.add('border-4', 'border-white');
+      } else if (percentage >= 60) {
+        feedbackMessage.textContent = 'Bagus!';
+        feedbackDetail.textContent = 'Kamu memiliki pemahaman yang cukup baik tentang kelapa sawit.';
+        emojiContainer.textContent = '😊';
+        // Keep default styles
+      } else if (percentage >= 40) {
+        feedbackMessage.textContent = 'Cukup Baik';
+        feedbackDetail.textContent = 'Kamu masih perlu mempelajari lebih banyak tentang kelapa sawit.';
+        emojiContainer.textContent = '🙂';
+        scoreHeader.classList.remove('bg-primary');
+        scoreHeader.classList.add('bg-yellow-500');
+      } else {
+        feedbackMessage.textContent = 'Perlu Belajar Lagi';
+        feedbackDetail.textContent = 'Jangan menyerah! Coba pelajari materi sekali lagi.';
+        emojiContainer.textContent = '😕';
+        scoreHeader.classList.remove('bg-primary');
+        scoreHeader.classList.add('bg-red-500');
+      }
+      
+      // Populate answers review
+      const reviewContainer = document.getElementById('review-container');
+      
+      // Questions data
+      const questions = [
+        {
+          number: 1,
+          text: 'Kapan kelapa sawit pertama kali dibawa ke Indonesia?',
+          options: {
+            'A': 'Tahun 1800',
+            'B': 'Tahun 1848',
+            'C': 'Tahun 1900',
+            'D': 'Tahun 1945'
+          }
+        },
+        {
+          number: 2,
+          text: 'Manakah yang BUKAN merupakan produk turunan dari kelapa sawit?',
+          options: {
+            'A': 'Minyak goreng',
+            'B': 'Sabun mandi',
+            'C': 'Margarin',
+            'D': 'Beras'
+          }
+        },
+        {
+          number: 3,
+          text: 'Berapa lama pohon kelapa sawit dapat bertahan hidup?',
+          options: {
+            'A': '5-10 tahun',
+            'B': '15-20 tahun',
+            'C': '25-30 tahun',
+            'D': '50-100 tahun'
+          }
+        },
+        {
+          number: 4,
+          text: 'Apa nama alat yang digunakan untuk memanen buah sawit pada pohon tinggi?',
+          options: {
+            'A': 'Dodos',
+            'B': 'Egrek',
+            'C': 'Thresher',
+            'D': 'Kapak'
+          }
+        },
+        {
+          number: 5,
+          text: 'Indonesia merupakan produsen kelapa sawit terbesar di dunia sejak tahun?',
+          options: {
+            'A': '1980-an',
+            'B': '1990-an',
+            'C': '2000-an',
+            'D': '2010-an'
+          }
+        }
+      ];
+      
+      // Generate answer review for each question
+      questions.forEach(question => {
+        const questionNumber = question.number;
+        const questionId = `q${questionNumber}`;
+        const userAnswer = userAnswers[questionId] || '';
+        const isCorrect = userAnswer === correctAnswers[questionId];
+        
+        // Create answer review item
+        const reviewItem = document.createElement('div');
+        reviewItem.className = 'border rounded-lg p-4';
+        
+        // Question text
+        const questionText = document.createElement('p');
+        questionText.className = 'font-medium text-tertiary mb-2';
+        questionText.textContent = `${questionNumber}. ${question.text}`;
+        reviewItem.appendChild(questionText);
+        
+        // User's answer
+        const userAnswerText = document.createElement('p');
+        userAnswerText.className = 'text-sm mb-1';
+        
+        if (userAnswer) {
+          const answerLabel = question.options[userAnswer];
+          userAnswerText.innerHTML = `Jawaban kamu: <span class="${isCorrect ? 'text-green-600 font-medium' : 'text-red-500 font-medium'}">${answerLabel}</span>`;
+        } else {
+          userAnswerText.innerHTML = `Jawaban kamu: <span class="text-red-500 font-medium">Tidak dijawab</span>`;
+        }
+        
+        reviewItem.appendChild(userAnswerText);
+        
+        // Correct answer (if user's answer is wrong)
+        if (!isCorrect) {
+          const correctAnswerKey = correctAnswers[questionId];
+          const correctAnswerLabel = question.options[correctAnswerKey];
+          
+          const correctAnswerText = document.createElement('p');
+          correctAnswerText.className = 'text-sm text-green-600 font-medium';
+          correctAnswerText.textContent = `Jawaban benar: ${correctAnswerLabel}`;
+          
+          reviewItem.appendChild(correctAnswerText);
+        }
+        
+        // Add result icon
+        const resultIcon = document.createElement('div');
+        resultIcon.className = 'absolute top-4 right-4';
+        
+        if (isCorrect) {
+          reviewItem.classList.add('border-green-200', 'bg-green-50', 'relative');
+          resultIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>`;
+        } else {
+          reviewItem.classList.add('border-red-200', 'bg-red-50', 'relative');
+          resultIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>`;
+        }
+        
+        reviewItem.appendChild(resultIcon);
+        
+        // Add to review container
+        reviewContainer.appendChild(reviewItem);
+      });
+    });
+  </script>
+</body>
+</html>

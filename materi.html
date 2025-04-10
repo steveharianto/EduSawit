@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Edukasi - EduSawit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4CAF50',
+            secondary: '#FFEB3B',
+            tertiary: '#795548'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-poppins min-h-screen bg-green-50 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2 group">
+        <img src="images/logo.png" alt="Logo EduSawit" class="h-10 w-auto">
+        <h1 class="text-primary text-xl md:text-2xl font-bold group-hover:text-tertiary transition">EduSawit</h1>
+      </a>
+      <a href="index.html" class="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Kembali
+      </a>
+    </div>
+  </header>
+
+  <!-- Submenu Kategori -->
+  <div class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-2">
+      <div class="flex flex-wrap justify-center md:justify-start space-x-2 md:space-x-4">
+        <button id="btn-sejarah" onclick="showContent('sejarah')" class="py-2 px-4 rounded-full bg-primary text-white hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-primary/50 transition my-1">Sejarah Sawit</button>
+        <button id="btn-manfaat" onclick="showContent('manfaat')" class="py-2 px-4 rounded-full bg-tertiary/20 text-tertiary hover:bg-tertiary/30 focus:outline-none focus:ring-2 focus:ring-tertiary/50 transition my-1">Manfaat Sawit</button>
+        <button id="btn-produksi" onclick="showContent('produksi')" class="py-2 px-4 rounded-full bg-tertiary/20 text-tertiary hover:bg-tertiary/30 focus:outline-none focus:ring-2 focus:ring-tertiary/50 transition my-1">Proses Produksi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Indicator -->
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl md:text-2xl font-bold text-tertiary">Materi Edukasi</h2>
+      <div class="flex items-center space-x-2">
+        <div id="page-indicator" class="text-sm text-tertiary">1/3</div>
+        <div class="flex space-x-1">
+          <button id="prev-btn" onclick="navigate(-1)" class="p-1 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <button id="next-btn" onclick="navigate(1)" class="p-1 rounded-full bg-primary text-white hover:bg-primary/80">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container mx-auto px-4 py-6 flex-grow">
+    <!-- Sejarah Sawit -->
+    <div id="sejarah" class="content-section">
+      <div class="bg-white rounded-xl shadow-md p-6 md:p-8">
+        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4">Sejarah Kelapa Sawit di Indonesia</h3>
+        
+        <div class="flex flex-col md:flex-row gap-6 mb-6">
+          <div class="md:w-1/2">
+            <img src="https://source.unsplash.com/random/800x600/?palm,plantation,history" alt="Perkebunan kelapa sawit" class="rounded-lg shadow-sm w-full h-auto">
+          </div>
+          <div class="md:w-1/2 flex flex-col justify-center">
+            <p class="text-gray-700 mb-4">Kelapa sawit pertama kali dibawa ke Indonesia oleh Belanda pada tahun 1848. Empat bibit kelapa sawit dari Mauritius dan Amsterdam ditanam di Kebun Raya Bogor.</p>
+            <p class="text-gray-700">Pada tahun 1911, perkebunan komersial pertama didirikan di Sumatra, yang kemudian berkembang pesat dan menjadikan Indonesia sebagai salah satu produsen kelapa sawit terbesar di dunia.</p>
+          </div>
+        </div>
+        
+        <div class="bg-primary/10 rounded-lg p-4 mb-6">
+          <h4 class="font-semibold text-primary mb-2">Tahukah Kamu?</h4>
+          <p class="text-gray-700">Pohon kelapa sawit dapat bertahan hidup hingga 25-30 tahun dan mulai berbuah setelah usia 3-4 tahun!</p>
+        </div>
+        
+        <div class="flex justify-center">
+          <div class="bg-white shadow rounded-lg p-4 max-w-md">
+            <h4 class="font-semibold text-tertiary mb-2 text-center">Perkembangan Kelapa Sawit</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">1</span>
+                <p class="text-sm text-gray-700">1848: 4 bibit pertama ditanam di Kebun Raya Bogor</p>
+              </li>
+              <li class="flex items-start">
+                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">2</span>
+                <p class="text-sm text-gray-700">1911: Perkebunan komersial pertama di Sumatra</p>
+              </li>
+              <li class="flex items-start">
+                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">3</span>
+                <p class="text-sm text-gray-700">1970-an: Program transmigrasi memperluas perkebunan</p>
+              </li>
+              <li class="flex items-start">
+                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">4</span>
+                <p class="text-sm text-gray-700">2000-an: Indonesia menjadi produsen terbesar dunia</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manfaat Sawit -->
+    <div id="manfaat" class="content-section hidden">
+      <div class="bg-white rounded-xl shadow-md p-6 md:p-8">
+        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4">Manfaat Kelapa Sawit</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-secondary/10 rounded-lg p-4 flex flex-col items-center">
+            <div class="bg-secondary rounded-full p-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-tertiary mb-2 text-center">Minyak Goreng</h4>
+            <p class="text-sm text-gray-700 text-center">Minyak sawit adalah bahan dasar minyak goreng yang digunakan sehari-hari di dapur rumah tangga.</p>
+          </div>
+          
+          <div class="bg-secondary/10 rounded-lg p-4 flex flex-col items-center">
+            <div class="bg-secondary rounded-full p-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-tertiary mb-2 text-center">Industri Makanan</h4>
+            <p class="text-sm text-gray-700 text-center">Bahan dasar untuk produksi margarin, es krim, biskuit, dan berbagai makanan olahan.</p>
+          </div>
+          
+          <div class="bg-secondary/10 rounded-lg p-4 flex flex-col items-center">
+            <div class="bg-secondary rounded-full p-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-tertiary mb-2 text-center">Kosmetik dan Sabun</h4>
+            <p class="text-sm text-gray-700 text-center">Digunakan dalam pembuatan lipstik, sampo, sabun, dan produk perawatan pribadi.</p>
+          </div>
+          
+          <div class="bg-secondary/10 rounded-lg p-4 flex flex-col items-center">
+            <div class="bg-secondary rounded-full p-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-tertiary mb-2 text-center">Bioenergi</h4>
+            <p class="text-sm text-gray-700 text-center">Dapat diolah menjadi biodiesel, sumber energi alternatif yang ramah lingkungan.</p>
+          </div>
+        </div>
+        
+        <div class="bg-primary/10 rounded-lg p-4">
+          <h4 class="font-semibold text-primary mb-2">Tahukah Kamu?</h4>
+          <p class="text-gray-700">Satu pohon kelapa sawit dapat menghasilkan minyak hingga 10 kali lebih banyak dibandingkan tanaman penghasil minyak lainnya per hektar lahan!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proses Produksi -->
+    <div id="produksi" class="content-section hidden">
+      <div class="bg-white rounded-xl shadow-md p-6 md:p-8">
+        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4">Proses Produksi Minyak Sawit</h3>
+        
+        <div class="flex justify-center mb-6">
+          <img src="https://source.unsplash.com/random/800x400/?palm,oil,factory" alt="Pabrik kelapa sawit" class="rounded-lg shadow-sm w-full max-w-2xl h-auto">
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="relative">
+            <div class="absolute left-4 h-full w-0.5 bg-primary"></div>
+            
+            <div class="relative pl-10 pb-6">
+              <div class="absolute left-0 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">1</div>
+              <h4 class="font-semibold text-tertiary mb-2">Panen</h4>
+              <p class="text-gray-700">Tandan buah segar (TBS) dipanen saat buah sudah matang, biasanya berwarna kemerahan. Panen dilakukan menggunakan dodos (alat panen) untuk pohon muda atau egrek untuk pohon tinggi.</p>
+            </div>
+            
+            <div class="relative pl-10 pb-6">
+              <div class="absolute left-0 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">2</div>
+              <h4 class="font-semibold text-tertiary mb-2">Pengangkutan</h4>
+              <p class="text-gray-700">TBS diangkut ke pabrik menggunakan truk atau lori. Proses ini harus dilakukan dengan cepat untuk menjaga kualitas buah.</p>
+            </div>
+            
+            <div class="relative pl-10 pb-6">
+              <div class="absolute left-0 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">3</div>
+              <h4 class="font-semibold text-tertiary mb-2">Perebusan</h4>
+              <p class="text-gray-700">TBS direbus dengan uap panas untuk mematikan enzim agar tidak merusak kualitas minyak, melunakkan buah, dan memudahkan pelepasan buah dari tandan.</p>
+            </div>
+            
+            <div class="relative pl-10 pb-6">
+              <div class="absolute left-0 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">4</div>
+              <h4 class="font-semibold text-tertiary mb-2">Pemisahan Buah</h4>
+              <p class="text-gray-700">Buah dipisahkan dari tandannya menggunakan mesin perontokan (thresher).</p>
+            </div>
+            
+            <div class="relative pl-10 pb-6">
+              <div class="absolute left-0 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">5</div>
+              <h4 class="font-semibold text-tertiary mb-2">Penggilingan</h4>
+              <p class="text-gray-700">Buah digiling untuk memecah sel-sel daging buah agar minyak dapat keluar.</p>
+            </div>
+            
+            <div class="relative pl-10">
+              <div class="absolute left-0 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">6</div>
+              <h4 class="font-semibold text-tertiary mb-2">Pemurnian</h4>
+              <p class="text-gray-700">Minyak yang diekstrak kemudian dimurnikan melalui proses pemisahan, penyaringan, dan pengeringan untuk menghasilkan Crude Palm Oil (CPO).</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-6 bg-primary/10 rounded-lg p-4">
+          <h4 class="font-semibold text-primary mb-2">Video Proses Produksi</h4>
+          <div class="aspect-w-16 aspect-h-9">
+            <div class="w-full h-60 bg-gray-200 rounded-lg flex items-center justify-center">
+              <p class="text-gray-500">Video ilustrasi proses produksi kelapa sawit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 mt-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">© 2023 EduSawit - Edukasi Kelapa Sawit untuk Pelajar</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="tentang.html" class="text-white hover:text-secondary transition">Tentang</a>
+          <a href="#" class="text-white hover:text-secondary transition">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentContent = 'sejarah';
+    let contentMap = {
+      'sejarah': 1,
+      'manfaat': 2,
+      'produksi': 3
+    };
+    
+    function showContent(contentId) {
+      // Hide all content sections
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      
+      // Show selected content
+      document.getElementById(contentId).classList.remove('hidden');
+      
+      // Update active button styling
+      document.querySelectorAll('[id^="btn-"]').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-white');
+        btn.classList.add('bg-tertiary/20', 'text-tertiary');
+      });
+      document.getElementById('btn-' + contentId).classList.remove('bg-tertiary/20', 'text-tertiary');
+      document.getElementById('btn-' + contentId).classList.add('bg-primary', 'text-white');
+      
+      // Update current content and page indicator
+      currentContent = contentId;
+      document.getElementById('page-indicator').textContent = contentMap[contentId] + '/3';
+      
+      // Update navigation buttons
+      updateNavButtons();
+    }
+    
+    function navigate(direction) {
+      const contents = ['sejarah', 'manfaat', 'produksi'];
+      const currentIndex = contents.indexOf(currentContent);
+      const newIndex = currentIndex + direction;
+      
+      if (newIndex >= 0 && newIndex < contents.length) {
+        showContent(contents[newIndex]);
+      }
+    }
+    
+    function updateNavButtons() {
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      
+      prevBtn.disabled = currentContent === 'sejarah';
+      nextBtn.disabled = currentContent === 'produksi';
+      
+      if (prevBtn.disabled) {
+        prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      }
+      
+      if (nextBtn.disabled) {
+        nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      }
+    }
+  </script>
+</body>
+</html>

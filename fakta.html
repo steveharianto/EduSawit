@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fakta Menarik - EduSawit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4CAF50',
+            secondary: '#FFEB3B',
+            tertiary: '#795548'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-poppins min-h-screen bg-green-50 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2 group">
+        <img src="images/logo.png" alt="Logo EduSawit" class="h-10 w-auto">
+        <h1 class="text-primary text-xl md:text-2xl font-bold group-hover:text-tertiary transition">EduSawit</h1>
+      </a>
+      <a href="index.html" class="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Beranda
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 flex-grow">
+    <h2 class="text-xl md:text-2xl font-bold text-tertiary mb-6 text-center">Fakta Menarik Kelapa Sawit</h2>
+    
+    <!-- Slider Cards Container -->
+    <div class="relative max-w-4xl mx-auto">
+      <div id="slider-container" class="overflow-hidden">
+        <div id="facts-slider" class="flex transition-transform duration-300 ease-in-out">
+          <!-- Fact Card 1 -->
+          <div class="fact-card min-w-full md:min-w-[33.333%] px-2">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-secondary/20 p-6 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-tertiary mb-2">1 Pohon, 50 Produk</h3>
+                <p class="text-gray-700">Satu pohon kelapa sawit dapat menghasilkan bahan baku untuk lebih dari 50 produk rumah tangga yang kita gunakan sehari-hari!</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fact Card 2 -->
+          <div class="fact-card min-w-full md:min-w-[33.333%] px-2">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-primary/20 p-6 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-tertiary mb-2">Efisiensi Tinggi</h3>
+                <p class="text-gray-700">Kelapa sawit menghasilkan minyak 10 kali lebih banyak per hektar dibandingkan kedelai, kanola, atau minyak nabati lainnya!</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fact Card 3 -->
+          <div class="fact-card min-w-full md:min-w-[33.333%] px-2">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-secondary/20 p-6 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-tertiary mb-2">Usia Produktif</h3>
+                <p class="text-gray-700">Pohon kelapa sawit mulai menghasilkan buah pada usia 3-4 tahun dan akan terus produktif hingga 25-30 tahun!</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fact Card 4 -->
+          <div class="fact-card min-w-full md:min-w-[33.333%] px-2">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-primary/20 p-6 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-tertiary mb-2">Penghasil Oksigen</h3>
+                <p class="text-gray-700">Perkebunan kelapa sawit menghasilkan lebih banyak oksigen dan menyerap lebih banyak karbon dioksida dibandingkan hutan hujan!</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fact Card 5 -->
+          <div class="fact-card min-w-full md:min-w-[33.333%] px-2">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-secondary/20 p-6 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-tertiary mb-2">Ekspor Utama</h3>
+                <p class="text-gray-700">Indonesia merupakan produsen dan eksportir minyak sawit terbesar di dunia, menyumbang sekitar 60% produksi global!</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fact Card 6 -->
+          <div class="fact-card min-w-full md:min-w-[33.333%] px-2">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-primary/20 p-6 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold text-tertiary mb-2">Sebagai Bioenergi</h3>
+                <p class="text-gray-700">Minyak kelapa sawit bisa diolah menjadi biodiesel yang lebih ramah lingkungan, mengurangi ketergantungan pada bahan bakar fosil!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button id="prev-btn" class="absolute top-1/2 left-0 -translate-y-1/2 bg-white text-primary p-2 rounded-full shadow-md hover:bg-primary hover:text-white transition z-10 focus:outline-none focus:ring-2 focus:ring-primary/50 md:-left-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="next-btn" class="absolute top-1/2 right-0 -translate-y-1/2 bg-white text-primary p-2 rounded-full shadow-md hover:bg-primary hover:text-white transition z-10 focus:outline-none focus:ring-2 focus:ring-primary/50 md:-right-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+      <!-- Indicator Dots -->
+      <div class="flex justify-center mt-6 space-x-2">
+        <button class="dot w-3 h-3 rounded-full bg-primary" data-index="0"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="4"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="5"></button>
+      </div>
+    </div>
+    
+    <!-- Fun Fact Box -->
+    <div class="mt-12 max-w-2xl mx-auto">
+      <div class="bg-white border-l-4 border-secondary rounded-lg shadow-md p-6">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-tertiary mb-1">Tahukah Kamu?</h3>
+            <p class="text-gray-700">Minyak kelapa sawit adalah minyak nabati paling banyak dikonsumsi di dunia, digunakan oleh hampir 3 miliar orang di lebih dari 150 negara!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-6 mt-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">© 2025 EduSawit - Edukasi Kelapa Sawit untuk Pelajar</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="tentang.html" class="text-white hover:text-secondary transition">Tentang</a>
+          <a href="#" class="text-white hover:text-secondary transition">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.getElementById('facts-slider');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const dots = document.querySelectorAll('.dot');
+      
+      let currentIndex = 0;
+      let cardWidth = 100; // Full width on mobile
+      let visibleCards = 1; // Show 1 card on mobile
+      
+      // Adjust for desktop view
+      if (window.innerWidth >= 768) {
+        cardWidth = 33.333; // 1/3 width on desktop
+        visibleCards = 3; // Show 3 cards on desktop
+      }
+      
+      const maxIndex = document.querySelectorAll('.fact-card').length - visibleCards;
+      
+      // Initialize
+      updateSlider();
+      
+      // Handle dots click
+      dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          currentIndex = parseInt(this.dataset.index);
+          if (window.innerWidth >= 768) {
+            // On desktop, we start showing 3 cards at a time
+            currentIndex = Math.min(currentIndex, maxIndex);
+          }
+          updateSlider();
+        });
+      });
+      
+      // Handle prev button
+      prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        } else {
+          // Add a bounce effect when at the beginning
+          slider.style.transform = `translateX(${-currentIndex * cardWidth + 2}%)`;
+          setTimeout(() => {
+            slider.style.transform = `translateX(${-currentIndex * cardWidth}%)`;
+          }, 150);
+        }
+      });
+      
+      // Handle next button
+      nextBtn.addEventListener('click', function() {
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateSlider();
+        } else {
+          // Add a bounce effect when at the end
+          slider.style.transform = `translateX(${-currentIndex * cardWidth - 2}%)`;
+          setTimeout(() => {
+            slider.style.transform = `translateX(${-currentIndex * cardWidth}%)`;
+          }, 150);
+        }
+      });
+      
+      // Update slider position and active dot
+      function updateSlider() {
+        slider.style.transform = `translateX(${-currentIndex * cardWidth}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.remove('bg-gray-300');
+            dot.classList.add('bg-primary');
+          } else {
+            dot.classList.remove('bg-primary');
+            dot.classList.add('bg-gray-300');
+          }
+        });
+        
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === maxIndex;
+        
+        // Apply subtle opacity to disabled buttons
+        if (prevBtn.disabled) {
+          prevBtn.classList.add('opacity-50');
+        } else {
+          prevBtn.classList.remove('opacity-50');
+        }
+        
+        if (nextBtn.disabled) {
+          nextBtn.classList.add('opacity-50');
+        } else {
+          nextBtn.classList.remove('opacity-50');
+        }
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        // Recalculate card width and visible cards based on screen size
+        if (window.innerWidth >= 768) {
+          cardWidth = 33.333;
+          visibleCards = 3;
+        } else {
+          cardWidth = 100;
+          visibleCards = 1;
+        }
+        
+        // Update maxIndex
+        const newMaxIndex = document.querySelectorAll('.fact-card').length - visibleCards;
+        
+        // Ensure currentIndex is not out of bounds
+        currentIndex = Math.min(currentIndex, newMaxIndex);
+        
+        // Update slider
+        updateSlider();
+      });
+      
+      // Auto slide every 5 seconds
+      let autoSlideInterval = setInterval(autoSlide, 5000);
+      
+      function autoSlide() {
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateSlider();
+      }
+      
+      // Pause auto slide on hover/touch
+      const sliderContainer = document.getElementById('slider-container');
+      
+      sliderContainer.addEventListener('mouseenter', function() {
+        clearInterval(autoSlideInterval);
+      });
+      
+      sliderContainer.addEventListener('mouseleave', function() {
+        autoSlideInterval = setInterval(autoSlide, 5000);
+      });
+      
+      // Swipe support for touch devices
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      slider.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoSlideInterval);
+      }, { passive: true });
+      
+      slider.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        autoSlideInterval = setInterval(autoSlide, 5000);
+      }, { passive: true });
+      
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Swipe left
+          if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+          }
+        }
+        
+        if (touchEndX > touchStartX + swipeThreshold) {
+          // Swipe right
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+          }
+        }
+      }
+      
+      // Add animations to cards when they come into view
+      function animateCards() {
+        const visibleCards = document.querySelectorAll('.fact-card');
+        visibleCards.forEach((card, index) => {
+          // Add a staggered entrance animation
+          setTimeout(() => {
+            card.classList.add('animate-bounce');
+            setTimeout(() => {
+              card.classList.remove('animate-bounce');
+            }, 500);
+          }, index * 150);
+        });
+      }
+      
+      // Animate cards on page load
+      setTimeout(animateCards, 300);
+    });
+  </script>
+</body>
+</html>
